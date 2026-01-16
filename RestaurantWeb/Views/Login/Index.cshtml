@@ -1,0 +1,121 @@
+﻿@{
+    Layout = null; // Login sayfasında admin layout'unu kullanmıyoruz
+}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lounge Admin | Giriş Yap</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #121212;
+            color: #fff;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-card {
+            background-color: #1e1e1e;
+            border: 1px solid #333;
+            border-radius: 15px;
+            padding: 40px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .login-title {
+            color: #bb86fc;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 30px;
+            letter-spacing: 2px;
+        }
+
+        .form-control {
+            background-color: #2c2c2c;
+            border: 1px solid #444;
+            color: #fff;
+            padding: 12px;
+        }
+
+            .form-control:focus {
+                background-color: #2c2c2c;
+                border-color: #bb86fc;
+                color: #fff;
+                box-shadow: none;
+            }
+
+            .form-control::placeholder {
+                color: #ffffff;
+                opacity: 0.3; /* Firefox için şart */
+            }
+
+            /* Tarayıcı uyumluluğu (eski ama sağlam) */
+            .form-control::-webkit-input-placeholder {
+                color: #ffffff;
+            }
+
+            .form-control:-ms-input-placeholder {
+                color: #ffffff;
+            }
+
+            .form-control::-ms-input-placeholder {
+                color: #ffffff;
+            }
+
+        .btn-login {
+            background-color: #bb86fc;
+            color: #121212;
+            font-weight: 600;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+            .btn-login:hover {
+                background-color: #9965f4;
+                transform: translateY(-2px);
+            }
+
+        .brand-logo {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #bb86fc;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <div class="brand-logo"><i class="fa-solid fa-mug-hot"></i></div>
+        <h3 class="login-title">LOUNGE ADMIN</h3>
+
+        <form action="/Login/Index" method="post">
+            <div class="mb-3">
+                <label class="form-label text-white small">KULLANICI ADI</label>
+                <input type="text" name="Username" class="form-control" placeholder="admin" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label text-white small">ŞİFRE</label>
+                <input type="password" name="Password" class="form-control" placeholder="••••••" required>
+            </div>
+            <button type="submit" class="btn btn-login">Sisteme Giriş Yap</button>
+        </form>
+
+        <div class="mt-4 text-center">
+            <a href="/Main/Index/" class="text-white small text-decoration-none"><i class="fa-solid fa-arrow-left"></i> Siteye Dön</a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,98 @@
+﻿@model List<RestaurantWeb.DAL.Entities.Galery>
+@{
+    ViewData["Title"] = "GalleryPage";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row mb-4 align-items-center">
+        <div class="col-md-6">
+            <h2 class="fw-bold">Fotoğraf Galerisi</h2>
+            <p class="text-white">Sitedeki galeri bölümüne yeni görseller ekleyebilir veya mevcutları yönetebilirsiniz.</p>
+        </div>
+        <div class="col-md-6 text-md-end">
+            <button class="btn btn-primary shadow-sm" data-bs-toggle="modal" data-bs-target="#addGalleryModal">
+                <i class="fa-solid fa-plus me-2"></i>Yeni Fotoğraf Ekle
+            </button>
+        </div>
+    </div>
+
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-xl-3 col-lg-4 col-md-6 mb-4">
+                <div class="admin-card h-100 p-0 overflow-hidden shadow-sm border-0">
+                    <div style="height: 200px; overflow: hidden; position: relative;">
+                        <img src="@item.ImageUrl" class="w-100 h-100" style="object-fit: cover;" alt="Galeri Görseli">
+                        <div class="position-absolute top-0 end-0 p-2">
+                            <span class="badge @(item.IsActive ? "bg-success" : "bg-warning")">
+                                @(item.IsActive ? "Aktif" : "Pasif")
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="p-3">
+                        <p class="text-muted small text-truncate mb-3" title="@item.ImageUrl">
+                            <i class="fa-solid fa-link me-1"></i> @item.ImageUrl
+                        </p>
+                        <div class="d-flex justify-content-between gap-2">
+                            <a href="/Admin/MakeActivePassive/@item.GaleryId"
+                               class="btn btn-sm @(item.IsActive ? "btn-outline-warning" : "btn-outline-success") flex-grow-1">
+                                <i class="fa-solid @(item.IsActive ? "fa-eye-slash" : "fa-eye") me-1"></i>
+                                @(item.IsActive ? "Gizle" : "Göster")
+                            </a>
+                            <a href="/Admin/DeletePhoto/@item.GaleryId/">
+                                <button class="btn btn-sm btn-outline-danger">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="modal fade" id="addGalleryModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark border-secondary">
+            <div class="modal-header border-secondary">
+                <h5 class="modal-title text-white">Yeni Fotoğraf Ekle</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            </div>
+            <form method="post">
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label class="form-label text-white small fw-bold">GÖRSEL URL</label>
+                        <input type="text" name="ImageUrl" class="form-control bg-dark border-secondary text-white" placeholder="https://..." required>
+                    </div>
+                </div>
+                <div class="modal-footer border-secondary">
+                    <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Vazgeç</button>
+                    <button type="submit" class="btn btn-primary">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    .admin-card:hover {
+        transform: translateY(-5px);
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.4) !important;
+    }
+
+    .modal-content {
+        background-color: #1e1e1e !important;
+    }
+</style>
+
+<script>
+    function editGallery(id, url) {
+        // Düzenleme modalı için basit bir JS tetikleyicisi kurgulayabilirsin
+        console.log("Düzenlenecek ID:", id, "URL:", url);
+    }
+</script>
+

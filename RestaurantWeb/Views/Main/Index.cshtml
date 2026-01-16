@@ -1,0 +1,38 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en" class="no-js" >
+@await Component.InvokeAsync("HeadComponent")
+<body id="top">
+    
+    <div id="preloader">
+        <div id="loader" class="dots-fade">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+
+    <div id="page" class="s-pagewrap ss-home">
+        @await Component.InvokeAsync("HeaderComponent")
+
+        @await Component.InvokeAsync("EntryComponent")
+
+        @await Component.InvokeAsync("AboutComponent")  
+
+        @await Component.InvokeAsync("MenuComponent")
+
+        @await Component.InvokeAsync("GalleryComponent")
+
+        @await Component.InvokeAsync("TestimonialComponent")
+
+        @await Component.InvokeAsync("FooterComponent")
+
+    </div> 
+
+    <script src="/Lounge-1.0.0/js/plugins.js"></script>
+    <script src="/Lounge-1.0.0/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer localizer
+@model List<Galery>
+<style>
+    .gallery-items__item-thumb {
+        display: block;
+        width: 100%;
+        height: 400px; /* Burayı tasarımına göre 350px - 450px arası sabitleyebilirsin */
+        overflow: hidden; /* Taşmaları engeller */
+        position: relative;
+    }
+
+        /* Kutunun içindeki resim için */
+        .gallery-items__item-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 1200x1300 olsa bile bozmadan kutuya sığdırır ve fazlalığı kırpar */
+            object-position: center; /* Resmi tam ortadan odaklar */
+            transition: transform 0.5s ease; /* Üzerine gelince efekt için */
+        }
+
+        /* Fare ile üzerine gelindiğinde hafif bir yakınlaşma efekti (Opsiyonel) */
+        .gallery-items__item-thumb:hover img {
+            transform: scale(1.05);
+        }
+
+    /* Mobil cihazlar için yükseklik ayarı (Daha küçük ekranlarda kare formu korumak için) */
+    media screen and (max-width: 600px) {
+        .gallery-items__item-thumb
+
+    {
+        height: 250px;
+    }
+
+    }
+</style>
+<section id="gallery" class="container s-gallery target-section">
+
+    <div class="row s-gallery__header">
+        <div class="column xl-12 section-header-wrap">
+            <div class="section-header" data-num="03">
+                <h2 class="text-display-title">@localizer["Galeri"]</h2>
+            </div>
+        </div> <!-- end section-header-wrap -->
+    </div> <!-- end s-gallery__header -->
+
+    <div class="gallery-items grid-cols grid-cols--wrap">
+
+        @foreach (var x in Model)
+        {
+            <div class="gallery-items__item grid-cols__column">
+                <a href="@x.ImageUrl" class="gallery-items__item-thumb glightbox">
+                    <img src="@x.ImageUrl"
+                         srcset="@x.ImageUrl 1x,
+                                            @x.ImageUrl 2x" alt="">
+                </a>
+            </div>
+        }
+
+    </div> <!-- end grid-list-items -->
+
+</section>

@@ -1,0 +1,86 @@
+﻿@model List<RestaurantWeb.DAL.Entities.Category>
+@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer localizer
+
+<section id="menu" class="container s-menu target-section">
+
+    <div class="row s-menu__content">
+
+        <div class="column xl-4 lg-5 md-12 s-menu__content-start">
+
+            <div class="section-header" data-num="02">
+                <h2 class="text-display-title">@localizer["Menümüz"]</h2>
+            </div>
+
+            <nav class="tab-nav">
+                <ul class="tab-nav__list">
+                    @foreach (var x in Model)
+                    {
+                        // Kategori ismini dile göre seçiyoruz
+                        string categoryDisplayName = ViewBag.SelectedLanguage switch
+                        {
+                            "tr" => x.CategoryName,
+                            "en" => x.CategoryNameEn,
+                            "es" => x.CategoryNameEs,
+                            _ => x.CategoryName // Varsayılan
+                        };
+                        <li>
+                            <a href="#tab-@x.CategoryId">
+                                <span>@categoryDisplayName</span>
+                                <svg clip-rule="evenodd" fill-rule="evenodd" stroke-linejoin="round" stroke-miterlimit="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.523 18.787s4.501-4.505 6.255-6.26c.146-.146.219-.338.219-.53s-.073-.383-.219-.53c-1.753-1.754-6.255-6.258-6.255-6.258-.144-.145-.334-.217-.524-.217-.193 0-.385.074-.532.221-.293.292-.295.766-.004 1.056l4.978 4.978h-14.692c-.414 0-.75.336-.75.75s.336.75.75.75h14.692l-4.979 4.979c-.289.289-.286.762.006 1.054.148.148.341.222.533.222.19 0 .378-.072.522-.215z" fill-rule="nonzero" /></svg>
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </nav> <!-- end tab-nav -->
+
+        </div> <!-- end s-menu__content-start -->
+
+        <div class="column xl-6 lg-6 md-12 s-menu__content-end">
+
+            <div class="tab-content menu-block">
+
+                @foreach (var cat in Model)
+                {
+                    // Kategori ismini dile göre seçiyoruz
+                    string categoryDisplayName = ViewBag.SelectedLanguage switch
+                    {
+                        "tr" => cat.CategoryName,
+                        "en" => cat.CategoryNameEn,
+                        "es" => cat.CategoryNameEs,
+                        _ => cat.CategoryName // Varsayılan
+                    };
+                    <div id="tab-@cat.CategoryId" class="menu-block__group tab-content__item">
+
+                        <h6 class="menu-block__cat-name">@categoryDisplayName</h6>
+
+                        <ul class="menu-list">
+                            @foreach (var product in cat.MenuItems)
+                            {
+                                string itemName = ViewBag.SelectedLanguage == "tr" ? product.Name :
+                                ViewBag.SelectedLanguage == "es" ? product.NameEs : product.NameEn;
+
+                                string itemDesc = ViewBag.SelectedLanguage == "tr" ? product.Description :
+                                ViewBag.SelectedLanguage == "es" ? product.DescriptionEs : product.DescriptionEn;
+
+                                <li class="menu-list__item">
+                                    <div class="menu-list__item-desc">
+                                        <h4>@itemName</h4>
+                                        <p>@itemDesc</p>
+                                    </div>
+                                    <div class="menu-list__item-price">
+                                        <span></span>@product.Price.ToString("F2") ₺
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                }
+
+            </div> <!-- menu-block -->
+
+        </div> <!-- end s-menu__content-end -->
+
+    </div> <!-- end s-menu__content -->
+
+</section>

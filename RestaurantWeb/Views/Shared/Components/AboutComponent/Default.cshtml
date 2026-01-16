@@ -1,0 +1,41 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer localizer
+@model List<About>
+<section id="about" class="container s-about target-section">
+
+    @foreach (var x in Model)
+    {
+        string displayName = ViewBag.SelectedLanguage switch
+        {
+            "tr" => x.Description,
+            "en" => x.DescriptionEn,
+            "es" => x.DescriptionEs,
+            _ => x.Description // Varsayılan
+        };
+        <div class="row s-about__content">
+
+            <div class="column xl-4 lg-5 md-12 s-about__content-start">
+
+                <div class="section-header" data-num="01">
+                    <h2 class="text-display-title">@localizer["Bizim Hikayemiz"]</h2>
+                </div>
+
+                <figure class="about-pic-primary">
+                    <img src="@x.ImageUrl"
+                         srcset="@x.ImageUrl 1x,
+                                     @x.ImageUrl 2x" alt="">
+                </figure>
+
+            </div>
+
+            <div class="column xl-6 lg-6 md-12 s-about__content-end">
+                <p>
+                    @displayName
+                </p>
+
+            </div>
+
+        </div>
+    }
+
+</section>

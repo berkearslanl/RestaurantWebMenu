@@ -1,0 +1,101 @@
+﻿@model SettingsViewModel
+@{
+    ViewData["Title"] = "Settings";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container-fluid">
+    <h2 class="fw-bold mb-4">Sistem Ayarları</h2>
+
+    <form action="/Admin/SettingsUpdate" method="post">
+        @* Hidden ID'ler veritabanında doğru satırı bulmak için şart *@
+        <input type="hidden" name="Contact.ContactId" value="@Model.Contact.ContactId" />
+        <input type="hidden" name="OpeningHour.OpeningHourId" value="@Model.OpeningHour.OpeningHourId" />
+
+        <div class="row">
+            <div class="col-lg-6 mb-4">
+                <div class="admin-card shadow-sm h-100">
+                    <h5 class="text-accent mb-4"><i class="fa-solid fa-address-book me-2"></i>İletişim</h5>
+                    <div class="mb-3">
+                        <label class="form-label text-white small fw-bold">TELEFON</label>
+                        <input type="text" name="Contact.Phone" value="@Model.Contact.Phone" class="form-control bg-dark border-secondary text-white">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label text-white small fw-bold">E-POSTA</label>
+                        <input type="email" name="Contact.Email" value="@Model.Contact.Email" class="form-control bg-dark border-secondary text-white">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label text-white small fw-bold">ADRES</label>
+                        <textarea name="Contact.Adress" class="form-control bg-dark border-secondary text-white" rows="2">@Model.Contact.Adress</textarea>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 mb-4">
+                <div class="admin-card shadow-sm h-100">
+                    <h5 class="text-warning mb-4"><i class="fa-solid fa-clock me-2"></i>Çalışma Saatleri</h5>
+                    <div class="row">
+                        <div class="col-6 mb-3">
+                            <label class="form-label text-white small fw-bold">HAFTA İÇİ AÇILIŞ</label>
+                            <input type="text" name="OpeningHour.WeekdaysOpen" value="@Model.OpeningHour.WeekdaysOpen" class="form-control bg-dark border-secondary text-white">
+                        </div>
+                        <div class="col-6 mb-3">
+                            <label class="form-label text-white small fw-bold">HAFTA İÇİ KAPANIŞ</label>
+                            <input type="text" name="OpeningHour.WeekdaysClose" value="@Model.OpeningHour.WeekdaysClose" class="form-control bg-dark border-secondary text-white">
+                        </div>
+                        <div class="col-6 mb-3">
+                            <label class="form-label text-white small fw-bold">HAFTA SONU AÇILIŞ</label>
+                            <input type="text" name="OpeningHour.WeekendsOpen" value="@Model.OpeningHour.WeekendsOpen" class="form-control bg-dark border-secondary text-white">
+                        </div>
+                        <div class="col-6 mb-3">
+                            <label class="form-label text-white small fw-bold">HAFTA SONU KAPANIŞ</label>
+                            <input type="text" name="OpeningHour.WeekendsClose" value="@Model.OpeningHour.WeekendsClose" class="form-control bg-dark border-secondary text-white">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 mb-4">
+                <div class="admin-card shadow-sm">
+                    <h5 class="text-info mb-4"><i class="fa-solid fa-share-nodes me-2"></i>Sosyal Medya Linkleri</h5>
+                    <div class="table-responsive">
+                        <table class="table table-dark">
+                            <thead>
+                                <tr>
+                                    <th>Platform</th>
+                                    <th>İkon (FontAwesome)</th>
+                                    <th>Link</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for (int i = 0; i < Model.SocialMedias.Count; i++)
+                                {
+                                    <tr>
+                                        <td>
+                                            <input type="hidden" name="SocialMedias[@i].SocialMediaId" value="@Model.SocialMedias[i].SocialMediaId" />
+                                            <input type="text" name="SocialMedias[@i].Platform" value="@Model.SocialMedias[i].Platform" class="form-control bg-dark border-secondary text-white" readonly>
+                                        </td>
+                                        <td>
+                                            <input type="text" name="SocialMedias[@i].Icon" value="@Model.SocialMedias[i].Icon" class="form-control bg-dark border-secondary text-white">
+                                        </td>
+                                        <td>
+                                            <input type="text" name="SocialMedias[@i].Link" value="@Model.SocialMedias[i].Link" class="form-control bg-dark border-secondary text-white">
+                                        </td>
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-end mb-5">
+            <button type="submit" class="btn btn-primary px-5 py-3 fw-bold">
+                <i class="fa-solid fa-save me-2"></i>Tüm Ayarları Uygula
+            </button>
+        </div>
+    </form>
+</div>
+

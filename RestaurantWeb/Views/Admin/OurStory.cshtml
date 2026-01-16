@@ -1,0 +1,94 @@
+﻿@model RestaurantWeb.DAL.Entities.About
+@{
+    ViewData["Title"] = "OurStory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="fw-bold">Bizim Hikayemiz</h2>
+            <p class="text-white">Ana sayfadaki "Our Story" bölümünün içeriklerini ve görselini buradan güncelleyebilirsiniz.</p>
+        </div>
+    </div>
+
+    <form  method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="admin-card shadow-sm">
+                    @* Hidden ID *@
+                    <input type="hidden" name="AboutId" value="@Model.AboutId" />
+
+                    <div class="mb-4">
+                        <label class="form-label text-white small uppercase fw-bold">Hikayemiz (TR)</label>
+                        <textarea name="Description" class="form-control bg-dark border-secondary text-white" rows="4">@Model.Description</textarea>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label text-white small uppercase fw-bold">Hikayemiz (EN)</label>
+                        <textarea name="DescriptionEn" class="form-control bg-dark border-secondary text-white" rows="4">@Model.DescriptionEn</textarea>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label text-white small uppercase fw-bold">Hikayemiz (ES)</label>
+                        <textarea name="DescriptionEs" class="form-control bg-dark border-secondary text-white" rows="4">@Model.DescriptionEs</textarea>
+                    </div>
+
+                    <div class="d-flex justify-content-end">
+                        <button type="submit" class="btn btn-primary px-5 shadow">
+                            <i class="fa-solid fa-save me-2"></i>Değişiklikleri Kaydet
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="admin-card shadow-sm text-center">
+                    <h5 class="fw-bold mb-3 text-start">Bölüm Görseli</h5>
+                    
+                    <div class="mb-3">
+                        <img src="@Model.ImageUrl" id="previewImage" class="img-fluid rounded border border-secondary mb-3" style="max-height: 250px; object-fit: cover;" alt="Hikayemiz Görseli">
+                    </div>
+
+                    <div class="mb-3 text-start">
+                        <label class="form-label text-white small fw-bold">YENİ GÖRSEL URL'si</label>
+                        <input type="text" name="ImageUrl" class="form-control bg-dark border-secondary text-white" >
+                    </div>
+                </div>
+
+                <div class="admin-card border-start border-4 border-primary mt-3">
+                    <p class="small text-white mb-0">
+                        <i class="fa-solid fa-lightbulb text-warning me-2"></i>
+                        <strong>İpucu:</strong> Görselin ana sayfadaki şıklığını koruması için dikey (portrait) oranlı fotoğraflar tercih etmeniz önerilir.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+
+<script>
+    // Görsel seçildiğinde anlık önizleme yapar
+    function previewFile() {
+        const preview = document.getElementById('previewImage');
+        const file = document.querySelector('input[type=file]').files[0];
+        const reader = new FileReader();
+
+        reader.addEventListener("load", function () {
+            preview.src = reader.result;
+        }, false);
+
+        if (file) {
+            reader.readAsDataURL(file);
+        }
+    }
+</script>
+
+<style>
+    textarea.form-control:focus {
+        background-color: #1a1a1a !important;
+        border-color: var(--accent-color) !important;
+        color: white !important;
+    }
+</style>

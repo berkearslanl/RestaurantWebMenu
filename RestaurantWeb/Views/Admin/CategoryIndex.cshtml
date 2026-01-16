@@ -1,0 +1,118 @@
+﻿@model List<RestaurantWeb.DAL.Entities.Category>
+@{
+    ViewData["Title"] = "CategoryIndex";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+@{
+    string textclass = "";
+    string text = "";
+    string title = "";
+    string iconclass = "";
+    string butonclass = "";
+    string ex = "";
+}
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <h2 class="fw-bold">Kategoriler</h2>
+            <p class="text-white">Menü kategorilerini buradan yönetebilirsiniz.</p>
+        </div>
+        <div class="col-md-6 text-md-end align-self-center">
+            <a href="/Admin/CategoryAdd/" class="btn btn-primary shadow-sm">
+                <i class="fa-solid fa-plus me-2"></i>Yeni Kategori Ekle
+            </a>
+        </div>
+    </div>
+
+    <div class="admin-card shadow-sm">
+        <div class="table-responsive">
+            <table class="table table-dark table-hover align-middle">
+                <thead>
+                    <tr class="text-muted border-bottom border-secondary">
+                        <th style="width: 50px;">#</th>
+                        <th>Kategori Adı (TR)</th>
+                        <th>Kategori Adı (EN)</th>
+                        <th>Kategori Adı (ES)</th>
+                        <th class="text-center">Durum</th>
+                        <th class="text-end">İşlemler</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var x in Model)
+                    {
+                        if (x.Status == true)
+                        {
+                            textclass = "badge bg-success-subtle text-success border border-success px-3";
+                            text = "Aktif Kategori";
+                            title = "Pasif Yap";
+                            iconclass = "fa-solid fa-trash";
+                            butonclass = "btn btn-sm btn-outline-danger ms-2";
+                            ex = "/Admin/CategoryGetPassive";
+                        }
+                        else
+                        {
+                            textclass = "badge bg-danger-subtle text-danger border border-danger px-3";
+                            text = "Pasif Kategori";
+                            title = "Aktif Yap";
+                            iconclass = "fa-solid fa-rotate-left";
+                            butonclass = "btn btn-sm btn-outline-success ms-2";
+                            ex = "/Admin/CategoryGetActive";
+                        }
+                        <tr>
+                            <td>@x.CategoryId</td>
+                            <td class="fw-bold">@x.CategoryName</td>
+                            <td>@x.CategoryNameEn</td>
+                            <td>@x.CategoryNameEs</td>
+                            <td class="text-center">
+                                <span class="@textclass">@text</span>
+                            </td>
+                            <td class="text-end">
+                                <div class="btn-group">
+                                    <a href="/Admin/CategoryUpdate/@x.CategoryId" class="btn btn-sm btn-outline-warning" title="Güncelle">
+                                        <i class="fa-solid fa-pen-to-square"></i>
+                                    </a>
+                                    <a href="@ex/@x.CategoryId">
+                                        <button class="@butonclass" title="@title">
+                                            <i class="@iconclass"></i>
+                                        </button>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Tabloya özel ince dokunuşlar */
+    .table thead th {
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+        padding-bottom: 15px;
+    }
+
+    .table tbody tr {
+        border-bottom: 1px solid #333;
+        transition: background-color 0.2s;
+    }
+
+    .table tbody td {
+        padding: 15px 10px;
+    }
+
+    .btn-group .btn {
+        border-radius: 8px !important;
+        margin-left: 5px;
+    }
+
+    .badge {
+        font-weight: 500;
+        border-radius: 6px;
+    }
+</style>
+

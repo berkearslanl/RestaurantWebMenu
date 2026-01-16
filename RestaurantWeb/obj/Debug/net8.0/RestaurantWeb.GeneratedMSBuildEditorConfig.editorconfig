@@ -1,0 +1,153 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = RestaurantWeb
+build_property.RootNamespace = RestaurantWeb
+build_property.ProjectDir = C:\Users\berke\OneDrive\Masaüstü\ASP.NET Murat Yücedağ\RestaurantWebSite\RestaurantWeb\RestaurantWeb\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\berke\OneDrive\Masaüstü\ASP.NET Murat Yücedağ\RestaurantWebSite\RestaurantWeb\RestaurantWeb
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Admin/CategoryAdd.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2F0ZWdvcnlBZGQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Admin/CategoryIndex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2F0ZWdvcnlJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Admin/CategoryUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ2F0ZWdvcnlVcGRhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Admin/CommentList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ29tbWVudExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Admin/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Admin/GalleryPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cR2FsbGVyeVBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Admin/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Admin/MailList.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFpbExpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Admin/MenuItem.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWVudUl0ZW0uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Admin/MenuUpdate.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWVudVVwZGF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Admin/OurStory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cT3VyU3RvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Admin/Settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cU2V0dGluZ3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Home/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Main/ErrorPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxFcnJvclBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Main/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWFpblxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Shared/Components/AboutComponent/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQWJvdXRDb21wb25lbnRcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Shared/Components/EntryComponent/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRW50cnlDb21wb25lbnRcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Shared/Components/FooterComponent/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcRm9vdGVyQ29tcG9uZW50XERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Shared/Components/GalleryComponent/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcR2FsbGVyeUNvbXBvbmVudFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Shared/Components/HeadComponent/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcSGVhZENvbXBvbmVudFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Shared/Components/HeaderComponent/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcSGVhZGVyQ29tcG9uZW50XERlZmF1bHQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Shared/Components/MenuComponent/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTWVudUNvbXBvbmVudFxEZWZhdWx0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Shared/Components/TestimonialComponent/Default.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVGVzdGltb25pYWxDb21wb25lbnRcRGVmYXVsdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Shared/_AdminLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/berke/OneDrive/Masaüstü/ASP.NET Murat Yücedağ/RestaurantWebSite/RestaurantWeb/RestaurantWeb/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-1tkljftffb

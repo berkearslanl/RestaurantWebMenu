@@ -1,0 +1,88 @@
+﻿@model RestaurantWeb.DAL.Entities.MenuItem
+@{
+    ViewData["Title"] = "MenuUpdate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="fw-bold">Ürün Güncelle</h2>
+            <p class="text-white">"@Model.Name" ürününün bilgilerini ve fiyatını buradan düzenleyebilirsiniz.</p>
+        </div>
+    </div>
+
+    <form method="post">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="admin-card shadow-sm">
+                    @* Güncelleme için ID Şart *@
+                    <input type="hidden" name="MenuItemId" value="@Model.MenuItemId" />
+
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <label class="form-label text-white small fw-bold">ÜRÜN ADI(TR)</label>
+                            <input type="text" name="Name" value="@Model.Name" class="form-control bg-dark border-secondary text-white" required>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <label class="form-label text-white small fw-bold">ÜRÜN ADI(EN)</label>
+                            <input type="text" name="NameEn" value="@Model.NameEn" class="form-control bg-dark border-secondary text-white" required>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <label class="form-label text-white small fw-bold">ÜRÜN ADI(ES)</label>
+                            <input type="text" name="NameEs" value="@Model.NameEs" class="form-control bg-dark border-secondary text-white" required>
+                        </div>
+
+                        <div class="col-md-6 mb-4">
+                            <label class="form-label text-white small fw-bold">KATEGORİ</label>
+                            <select name="CategoryId" class="form-select bg-dark border-secondary text-white" required>
+                                @foreach (var cat in ViewBag.Categories)
+                                {
+                                    <option value="@cat.CategoryId" selected="@(cat.CategoryId == Model.CategoryId ? "selected" : null)">
+                                        @cat.CategoryName
+                                    </option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <label class="form-label text-white small fw-bold">FİYAT (₺)</label>
+                            <input type="text" step="1" name="Price" value="@Model.Price" class="form-control bg-dark border-secondary text-white" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label text-white small fw-bold">AÇIKLAMA(TR)</label>
+                        <textarea name="Description" class="form-control bg-dark border-secondary text-white" rows="4">@Model.Description</textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label text-white small fw-bold">AÇIKLAMA(EN)</label>
+                        <textarea name="DescriptionEn" class="form-control bg-dark border-secondary text-white" rows="4">@Model.DescriptionEn</textarea>
+                    </div>
+                    <div class="mb-4">
+                        <label class="form-label text-white small fw-bold">AÇIKLAMA(ES)</label>
+                        <textarea name="DescriptionEs" class="form-control bg-dark border-secondary text-white" rows="4">@Model.DescriptionEs</textarea>
+                    </div>
+                    <div class="mb-4">
+                        <div class="form-check form-switch">
+                            @* Value="true" eklemeyi ve mevcut durumu kontrol etmeyi unutma *@
+                            <input class="form-check-input" type="checkbox" name="Status" id="statusSwitch"
+                                   value="true" @(Model.Status ? "checked" : "")>
+                            <label class="form-check-label text-white" for="statusSwitch">Ürün Satışta mı?</label>
+                        </div>
+                    </div>
+                    <div class="d-flex justify-content-between border-top border-secondary pt-4">
+                        <a href="/Admin/MenuItem/" class="btn btn-outline-light px-4">Vazgeç</a>
+                        <button type="submit" class="btn btn-warning px-5 text-dark fw-bold">
+                            <i class="fa-solid fa-rotate me-2"></i>Güncellemeyi Tamamla
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+

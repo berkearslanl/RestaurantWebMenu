@@ -1,0 +1,99 @@
+﻿@model RestaurantWeb.DAL.Entities.Category
+@{
+    ViewData["Title"] = "CategoryUpdate";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="row mb-4">
+        <div class="col-12">
+            <h2 class="fw-bold">Kategori Güncelle</h2>
+            <p class="text-white">"@Model.CategoryName" kategorisinin bilgilerini ve dil seçeneklerini düzenleyin.</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="admin-card shadow-sm">
+                <form method="post">
+                    
+                    @* Güncelleme işlemi için ID şart *@
+                    <input type="hidden" name="CategoryId" value="@Model.CategoryId" />
+
+                    <div class="mb-4">
+                        <label class="form-label text-white small uppercase fw-bold">Kategori Adı (TR)</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-dark border-secondary text-white">
+                                <i class="fa-solid fa-font"></i>
+                            </span>
+                            <input type="text" name="CategoryName" value="@Model.CategoryName" class="form-control bg-dark border-secondary text-white" required>
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label text-white small uppercase fw-bold">Kategori Adı (EN)</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-dark border-secondary text-white">
+                                <i class="fa-solid fa-language"></i>
+                            </span>
+                            <input type="text" name="CategoryNameEn" value="@Model.CategoryNameEn" class="form-control bg-dark border-secondary text-white">
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <label class="form-label text-white small uppercase fw-bold">Kategori Adı (ES)</label>
+                        <div class="input-group">
+                            <span class="input-group-text bg-dark border-secondary text-white">
+                                <i class="fa-solid fa-language"></i>
+                            </span>
+                            <input type="text" name="CategoryNameEs" value="@Model.CategoryNameEs" class="form-control bg-dark border-secondary text-white">
+                        </div>
+                    </div>
+
+                    <div class="mb-4">
+                        <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" name="Status" id="statusSwitch" @(Model.Status ? "checked" : "") value="true">
+                            <label class="form-check-label text-white" for="statusSwitch">Kategori Aktif</label>
+                        </div>
+                    </div>
+
+                    <hr class="border-secondary my-4">
+
+                    <div class="d-flex justify-content-between">
+                        <a href="/Admin/Category/CategoryIndex" class="btn btn-outline-light px-4">
+                            <i class="fa-solid fa-arrow-left me-2"></i>Vazgeç
+                        </a>
+                        <button type="submit" class="btn btn-warning px-5 shadow text-dark fw-bold">
+                            <i class="fa-solid fa-rotate me-2"></i>Değişiklikleri Uygula
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+        <div class="col-lg-4">
+            <div class="admin-card border-start border-4 border-warning">
+                <h5 class="fw-bold mb-3 text-warning"><i class="fa-solid fa-triangle-exclamation me-2"></i>Dikkat</h5>
+                <p class="small text-white mb-0">
+                    Kategori adını değiştirmeniz, bu kategoriye bağlı olan tüm yemeklerin gruplandırmasını etkileyecektir. Dil çevirilerinin doğruluğundan emin olun.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .form-control:focus {
+        background-color: #1a1a1a !important;
+        border-color: #ffc107 !important;
+        color: white !important;
+        box-shadow: 0 0 0 0.25rem rgba(255, 193, 7, 0.25);
+    }
+    .input-group-text { border-right: none; }
+    .form-control { border-left: none; }
+    .form-check-input:checked {
+        background-color: #ffc107;
+        border-color: #ffc107;
+    }
+</style>
