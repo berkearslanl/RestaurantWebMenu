@@ -2,6 +2,9 @@
 
 Lounge Cafe, modern bir restoranın dijital dünyadaki tüm ihtiyaçlarını karşılamak üzere tasarlanmış, dinamik içerik yönetimine sahip profesyonel bir web uygulamasıdır.
 
+## 🚀 Canlı Demo
+https://berkewebsite.com.tr/
+
 ## ✨ Öne Çıkan Özellikler
 
 - **Full Dinamik İçerik:** Menü öğeleri, kategoriler, iletişim bilgileri ve çalışma saatleri tamamen admin panelinden yönetilebilir.
